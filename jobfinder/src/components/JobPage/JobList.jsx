@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import SingleJob from "./SingleJob";
 
-import { Row, Container } from "react-bootstrap";
+import { Row, Container, Col } from "react-bootstrap";
 export default class JobList extends Component {
   render() {
     return (
@@ -9,7 +9,7 @@ export default class JobList extends Component {
         <Container>
           <Row>
             {this.props.jobs.map((job) => {
-              return <SingleJob job={this.props.jobs} />;
+              return <SingleJob job={job} />;
             })}
           </Row>
         </Container>

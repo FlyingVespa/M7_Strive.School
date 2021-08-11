@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { FormControl, Button, InputGroup, Container } from "react-bootstrap";
-import JobList from "./JobList";
+import JobList from "./JobPage/JobList";
 
 export default class SearchBar extends Component {
   state = {
@@ -37,7 +37,7 @@ export default class SearchBar extends Component {
               }
               aria-label="searchField"
             />
-            <Button onClick={() => this.searchJobs}>Search</Button>
+            <Button onClick={this.searchJobs}>Search</Button>
           </InputGroup>
           <JobList jobs={this.state.jobs} />
         </Container>

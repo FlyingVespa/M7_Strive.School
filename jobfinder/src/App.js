@@ -9,8 +9,8 @@ import "./App.css";
 import NavbarTop from "./components/Navigation/NavbarTop";
 import SearchBar from "./components/SearchBar";
 import CompanyDetailPage from "./components/CompanyPage/CompanyDetailPage";
-import JobList from "./components/JobList";
-import SingleJob from "./components/SingleJob";
+import JobList from "./components/JobPage/JobList";
+import SingleJob from "./components/JobPage/SingleJob";
 
 function App() {
   return (
