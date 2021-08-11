@@ -44,11 +44,9 @@ export default class MainSearch extends React.Component {
               />
             </Form>
           </Col>
-          <Col xs={10} className="mx-auto mb-5">
-            {this.state.jobs.map((jobData) => (
-              <Job key={uniqid()} data={jobData} />
-            ))}
-          </Col>
+          {this.state.jobs.map((jobData) => (
+            <Job key={uniqid()} data={jobData} />
+          ))}
         </Row>
       </Container>
     );
