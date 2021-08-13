@@ -1,8 +1,8 @@
 import React from "react";
-import { Container, Row, Col, Form } from "react-bootstrap";
+import { Container, Row, Col, Form, Button } from "react-bootstrap";
 import Job from "./Job";
 import uniqid from "uniqid";
-
+import { StarFill } from "react-bootstrap-icons";
 export default class MainSearch extends React.Component {
   state = {
     search: "",
@@ -31,6 +31,10 @@ export default class MainSearch extends React.Component {
   render() {
     return (
       <Container>
+        <Button to="/Fav">
+          Favroites
+          <StarFill />
+        </Button>
         <Row>
           <Col xs={10} className="mx-auto my-3">
             <h1>Remote Jobs Search</h1>

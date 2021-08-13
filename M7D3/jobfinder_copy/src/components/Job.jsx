@@ -3,7 +3,7 @@ import { Row, Col, Card, Image } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { StarFill, Star } from "react-bootstrap-icons";
 import { connect } from "react-redux";
-import { addJobToFavsAction, removeJobFromFavsAction } from "../actions";
+import { addJobToFavsAction, removeJobFromFavsAction } from "../redux/actions";
 
 const mapStateToProps = (state) => state;
 const mapDispatchToProps = (dispatch) => ({
@@ -48,6 +48,8 @@ class Job extends React.Component {
                   {this.props.data.company_name}
                 </Link>
               </Col>
+              <Col>{this.props.data.candidate_required_location}</Col>
+              <Col>{this.props.data.job_type}</Col>
             </Card.Body>
           </Card>
         )}
