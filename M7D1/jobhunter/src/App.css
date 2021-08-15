@@ -1,0 +1,48 @@
+@import url("https://fonts.googleapis.com/css2?family=Syncopate:wght@700&display=swap");
+
+/* Index
+
+1. Navbar
+2. SearchInput
+3.
+
+*/
+
+/* ------------------------------------------ */
+/* 1. Navbar */
+.navbar_top {
+  height: 50px !important;
+}
+
+.navbar_top img {
+  height: 40px;
+  background-color: white;
+  border: 2px black solid;
+  margin-right: 15px;
+}
+
+.navbar_top .navbar-brand {
+  font-family: "Syncopate", "sans-serif";
+}
+
+/* ------------------------------------------ */
+/* 2. SearchInput */
+
+.searchbar {
+  margin: auto;
+  /* border: 3px solid #8bc53f; */
+  border-radius: 15px;
+  padding: 10px;
+  width: 50%;
+  background-color: #8bc53f;
+  filter: drop-shadow(1px 1px 2px rgb(85, 85, 85));
+}
+
+/* ------------------------------------------ */
+/* 3. JobList */
+.joblogo_big {
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+  border: 2px red solid;
+}
