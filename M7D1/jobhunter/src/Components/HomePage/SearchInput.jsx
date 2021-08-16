@@ -25,15 +25,13 @@ export default class SearchInput extends Component {
           <Form className="pt-3" onSubmit={this.searchjobs}>
             <InputGroup className="mb-3 searchbar">
               <FormControl
-                placeholder="Search for your dream job..."
-                aria-label="Searchbar"
-                aria-describedby="basic-addon2"
+                placeholder="Search..."
                 value={this.state.search}
                 onChange={(e) => this.setState({ search: e.target.value })}
               />
               <Button
                 type="submit"
-                onClick={this.searchjobs}
+                onClick={this.searchjobs && console.log("click")}
                 variant="secondary"
                 id="search-btn"
               >

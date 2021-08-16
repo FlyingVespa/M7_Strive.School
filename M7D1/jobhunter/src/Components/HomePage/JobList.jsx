@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Container, Image } from "react-bootstrap";
+import { Image } from "react-bootstrap";
 import JobTemplate from "./JobTemplate";
 
 export default class JobList extends Component {
