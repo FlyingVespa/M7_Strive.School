@@ -6,7 +6,6 @@ export default class JobTemplate extends Component {
   render() {
     return (
       <>
-        (
         <Card style={{ width: "20rem" }}>
           <Card.Body>
             <Card.Title>{this.props.job.title}</Card.Title>
@@ -21,7 +20,6 @@ export default class JobTemplate extends Component {
             </Button>
           </Card.Body>
         </Card>
-        )
       </>
     );
   }
