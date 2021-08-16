@@ -11,27 +11,39 @@ import CompanyPage from "./Components/CompanyPage/CompanyPage.jsx";
 export default class App extends Component {
   state = {
     result: "",
+    isLoading: false,
   };
 
   crud = {
     endpoint: "https://remotive.io/api/remote-jobs",
 
     getAll: async (query) => {
+      this.setState({
+        isLoading: true,
+      });
       try {
         let response = await fetch(
           "https://remotive.io/api/remote-jobs?search=" + query
         );
         if (response.ok) {
+          this.setState({ isLoading: false });
           let result = await response.json();
           this.setState({ result: result });
         } else {
+          this.setState({
+            isLoading: false,
+          });
           throw new Error("got data but somethign wrtong");
         }
       } catch (error) {
         console.error(error);
+        this.setState({
+          isLoading: false,
+        });
       }
     },
   };
+
   render() {
     return (
       <>
@@ -49,7 +61,7 @@ export default class App extends Component {
             )}
           />
           <Route
-            path="/jobs"
+            path="/"
             render={(routerProps) => (
               <JobList
                 {...routerProps}
@@ -65,6 +77,7 @@ export default class App extends Component {
                 {...routerProps}
                 result={this.state.result}
                 crud={this.crud}
+                isLoading={this.state.isLoading}
               />
             )}
           />
