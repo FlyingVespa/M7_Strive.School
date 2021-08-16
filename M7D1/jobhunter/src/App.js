@@ -9,7 +9,7 @@ import NavbarTop from "./Components/HomePage/NavbarTop";
 
 export default class App extends Component {
   state = {
-    jobs: null,
+    result: null,
   };
 
   crud = {
@@ -24,26 +24,27 @@ export default class App extends Component {
       } catch (error) {
         console.error(error);
       }
-      this.setState({ jobs: result });
-    },
-
-    render() {
-      return (
-        <>
-          <NavbarTop />
-          <Router>
-            <Route
-              render={(routerProps) => (
-                <SearchInput
-                  {...routerProps}
-                  jobs={this.state.jobs}
-                  crud={this.crud}
-                />
-              )}
-            />
-          </Router>
-        </>
-      );
+      this.setState({ result: result });
     },
   };
+  render() {
+    return (
+      <>
+        <NavbarTop />
+        <Router>
+          <Route
+            path="/"
+            exact
+            render={(routerProps) => (
+              <SearchInput
+                {...routerProps}
+                result={this.state.result}
+                crud={this.crud}
+              />
+            )}
+          />
+        </Router>
+      </>
+    );
+  }
 }
