@@ -5,6 +5,7 @@ import {
   Button,
   FormControl,
   Form,
+  Row,
 } from "react-bootstrap";
 import JobList from "./JobList";
 
@@ -16,6 +17,8 @@ export default class SearchInput extends Component {
   searchjobs = async (e) => {
     e.preventDefault();
     await this.props.crud.getAll(this.state.search);
+    console.log(this.state.search);
+    console.log(this.props.result.jobs);
   };
 
   render() {
@@ -39,7 +42,6 @@ export default class SearchInput extends Component {
               </Button>
             </InputGroup>
           </Form>
-          <JobList jobs={this.props.result} />
         </Container>
       </>
     );
