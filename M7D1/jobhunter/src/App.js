@@ -42,8 +42,22 @@ export default class App extends Component {
         });
       }
     },
+    get: async (name) => {
+      let result;
+      try {
+        if (name === "" || name === undefined || name === null)
+          throw new Error("name must be present");
+        result = await fetch(this.crud.endpoint + "?company_name=" + name);
+        if (!result.ok)
+          throw new Error("Got data in return but status.ok is false!");
+        result = await result.json();
+      } catch (error) {
+        console.error(error);
+        return null;
+      }
+      return await result;
+    },
   };
-
   render() {
     return (
       <>
@@ -72,6 +86,7 @@ export default class App extends Component {
           />
           <Route
             path="/company_name/:id"
+            exact
             render={(routerProps) => (
               <CompanyPage
                 {...routerProps}

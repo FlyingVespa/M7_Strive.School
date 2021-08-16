@@ -12,13 +12,16 @@ import JobList from "./JobList";
 export default class SearchInput extends Component {
   state = {
     search: "",
+    isLoading: false,
   };
 
   searchjobs = async (e) => {
     e.preventDefault();
+    this.setState({ isLoading: true });
     await this.props.crud.getAll(this.state.search);
     console.log(this.state.search);
     console.log(this.props.result.jobs);
+    this.setState({ isLoading: false });
   };
 
   render() {

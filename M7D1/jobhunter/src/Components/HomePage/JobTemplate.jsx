@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Card, Button, Col, Badge, Spinner } from "react-bootstrap";
 import { Star, StarFill } from "react-bootstrap-icons";
+import { Link } from "react-router-dom";
 export default class JobTemplate extends Component {
   state = {
     isSelected: false,
@@ -21,6 +22,11 @@ export default class JobTemplate extends Component {
                 <p>{this.props.job.job_type}</p>
                 <p>{this.props.job.company_name}</p>
               </Card.Body>
+              <Link to={`./company-details/${this.props.job.company_name}`}>
+                <Card.Footer className="text-center p-1">
+                  {this.props.job.company_name}
+                </Card.Footer>
+              </Link>
               <Badge className="fav_badge">
                 <StarFill />
               </Badge>
