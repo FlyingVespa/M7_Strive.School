@@ -4,13 +4,14 @@ import JobList from "./JobList";
 
 export default class SearchInput extends Component {
   state = {
-    search: "",
+    query: "",
   };
 
   search = async (e) => {
     e.preventDefault();
-    await this.props.crud.getAll(this.state.search);
+    await this.props.crud.getAll(this.state.query);
   };
+
   render() {
     return (
       <>
@@ -20,14 +21,19 @@ export default class SearchInput extends Component {
               placeholder="Search for your dream job..."
               aria-label="Searchbar"
               aria-describedby="basic-addon2"
-              value={this.state.search}
-              onChange={(e) => this.setState({ search: e.target.value })}
+              value={this.state.query}
+              onChange={(e) => this.setState({ query: e.target.value })}
             />
-            <Button variant="secondary" id="button-addon2">
+            <Button
+              type="submit"
+              onClick={this.searchJobs}
+              variant="secondary"
+              id="search-btn"
+            >
               Search
             </Button>
           </InputGroup>
-          <JobList jobs={this.state.search} />
+          <JobList jobs={this.props.jobs} />
         </Container>
       </>
     );
