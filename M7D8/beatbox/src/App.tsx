@@ -1,4 +1,4 @@
-import "./styles/style.css";
+import "./App.css";
 import MyNav from "./components/MyNav";
 
 import Search from "./components/Search";

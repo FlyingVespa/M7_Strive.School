@@ -2,7 +2,6 @@ import { Result } from "../types/interfaces";
 import { Card, Col, Row, Image, Nav } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { ScaleLoader, RingLoader } from "react-spinners";
-import "../styles/style.css";
 
 interface MusicListProps {
   songs: Result[];
@@ -43,7 +42,7 @@ const MusicList = ({ songs, isLoading }: MusicListProps) => {
                   </Card>
                 </>
               ) : (
-                <ScaleLoader />
+                <ScaleLoader id="loader" />
               )}
             </Col>
           ))}

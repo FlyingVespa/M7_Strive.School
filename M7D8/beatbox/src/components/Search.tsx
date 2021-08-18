@@ -1,5 +1,3 @@
-import "../styles/style.css";
-
 import MusicList from "./MusicList";
 
 import {
@@ -11,14 +9,13 @@ import {
 } from "react-bootstrap";
 import { ChangeEvent, useState } from "react";
 import { Result } from "../types/interfaces";
-import { ScaleLoader } from "react-spinners";
+
 function Search() {
   const [query, setQuery] = useState<string>("");
   const [results, setResults] = useState<Result[] | null>(null);
   const [placeholder, setPlaceholder] = useState<string>(
     "Search for your favorite beats"
   );
-  const [isHovered, setIsHovered] = useState<boolean>(false);
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     e.preventDefault();

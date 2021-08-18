@@ -1,7 +1,5 @@
-import "../styles/style.css";
 import { Component } from "react";
 import { Container, Navbar, Row, Nav, Image } from "react-bootstrap";
-import { SiApplemusic } from "react-icons/si";
 
 class MyNav extends Component {
   state = {};
