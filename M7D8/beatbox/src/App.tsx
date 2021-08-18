@@ -1,14 +1,13 @@
-import './styles/style.css'
-import MyNav from './components/MyNav';
+import "./styles/style.css";
+import MyNav from "./components/MyNav";
 
-import Searching from './components/Searching';
+import Search from "./components/Search";
 
 function App() {
   return (
     <>
-    <MyNav/>
-   
-    <Searching/>
+      <MyNav />
+      <Search />
     </>
   );
 }
