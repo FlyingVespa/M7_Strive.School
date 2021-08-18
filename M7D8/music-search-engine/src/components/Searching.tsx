@@ -1,23 +1,21 @@
-import '../styles/style.css';
+import "../styles/style.css";
 
-import { GiMusicalNotes } from 'react-icons/gi';
-import AllList from './AllList';
+import AllList from "./AllList";
 
 import {
   Container,
-  Row,
-  Col,
   InputGroup,
   FormControl,
   Button,
-} from 'react-bootstrap';
-import { ChangeEvent, useState } from 'react';
-import { Result } from '../types/interfaces';
+  Image,
+} from "react-bootstrap";
+import { ChangeEvent, useState } from "react";
+import { Result } from "../types/interfaces";
 
 function Searching() {
-  const [query, setQuery] = useState<string>('');
+  const [query, setQuery] = useState<string>("");
   const [results, setResults] = useState<Result[]>([]);
-  const [placeholder, setPlaceholder] = useState<string>('Set your music here');
+  const [placeholder, setPlaceholder] = useState<string>("Set your music here");
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     e.preventDefault();
@@ -25,7 +23,7 @@ function Searching() {
   };
   const handleClick = () => {
     getMusic(query);
-    setPlaceholder('try again');
+    setPlaceholder("try again");
     console.log(placeholder);
   };
 
@@ -45,28 +43,18 @@ function Searching() {
 
   return (
     <>
-      <Container>
-        <Row>
-          <Col md={6}>
-            <InputGroup size="lg" className="search-desc">
-              <InputGroup.Text id="inputGroup-sizing-lg">
-                {' '}
-                <GiMusicalNotes className="search-bar-icon" />
-              </InputGroup.Text>
-
-              <FormControl
-                aria-label="Large"
-                placeholder={placeholder}
-                aria-describedby="inputGroup-sizing-sm"
-                onChange={handleChange}
-              />
-              <Button variant="secondary" onClick={handleClick}>
-                Go!
-              </Button>
-            </InputGroup>{' '}
-          </Col>
-        </Row>
-        <AllList songs={results} />
+      <Container className="container_searchbar">
+        <InputGroup className="mb-3 searchbar">
+          <FormControl placeholder={placeholder} onChange={handleChange} />
+          <Button onClick={handleClick} variant="secondary" id="search-btn">
+            Search
+          </Button>
+        </InputGroup>
+        {!results ? (
+          <Image src="gorilla.png" id="gorilla" />
+        ) : (
+          <AllList songs={results} />
+        )}
       </Container>
     </>
   );
