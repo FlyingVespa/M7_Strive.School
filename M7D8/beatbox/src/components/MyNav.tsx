@@ -10,10 +10,10 @@ class MyNav extends Component {
         <Navbar bg="dark" variant="dark" className="navbar_top mb-5">
           <Container>
             <Image src="mic.png" id="mic_logo" roundedCircle />
-            <Navbar.Brand href="#home">BeatBox</Navbar.Brand>
+            <Navbar.Brand href="/">BeatBox</Navbar.Brand>
             <Nav className="me-auto">
-              <Nav.Link href="#home">Home</Nav.Link>
-              <Nav.Link href="#features">Favorites</Nav.Link>
+              <Nav.Link href="/">Home</Nav.Link>
+              <Nav.Link href="/Favs">Favorites</Nav.Link>
             </Nav>
           </Container>
         </Navbar>

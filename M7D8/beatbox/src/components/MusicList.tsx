@@ -26,10 +26,12 @@ const MusicList = ({ songs, isLoading }: MusicListProps) => {
                   <Card className="card">
                     <Card.Body>
                       <Row className="m-0">
-                        <h5>{song.title_short}</h5>
+                        <Nav.Link href={`track/${song.id}`}>
+                          <h5>{song.title_short}</h5>
+                        </Nav.Link>
                       </Row>
                       <Row className="m-0 p-0">
-                        <Nav.Link href="/artist/:id">
+                        <Nav.Link href={`artist/${song.artist.name}`}>
                           {song.artist.name}
                         </Nav.Link>
                       </Row>
@@ -42,7 +44,7 @@ const MusicList = ({ songs, isLoading }: MusicListProps) => {
                   </Card>
                 </>
               ) : (
-                <ScaleLoader id="loader" />
+                <ScaleLoader />
               )}
             </Col>
           ))}

@@ -102,6 +102,12 @@
   padding: 50px !important;
 }
 
+#track_details {
+  text-align: center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
 @media only screen and (max-width: 460px) {
   #artist-image {
     left: 7% !important;
