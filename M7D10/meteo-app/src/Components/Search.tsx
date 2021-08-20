@@ -8,6 +8,7 @@ import {
   Image,
 } from "react-bootstrap";
 import { WeatherSearch } from "../Types/interface";
+import Weather from "./Weather";
 
 function Search() {
   const [query, setQuery] = useState<string>("");
@@ -54,6 +55,7 @@ function Search() {
             Search
           </Button>
         </InputGroup>
+        <Weather weather={results} />
       </Container>
     </>
   );

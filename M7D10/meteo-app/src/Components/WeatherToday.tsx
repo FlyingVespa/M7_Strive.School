@@ -1,7 +1,12 @@
 import React from "react";
+import { WeatherSearch } from "../Types/interface";
 import { Container } from "react-bootstrap";
+interface WeatherSearchProps {
+  weather: WeatherSearch[];
+  isLoading: boolean;
+}
 
-export default function WeatherToday() {
+function WeatherToday({ weather, isLoading }: WeatherSearchProps) {
   return (
     <>
       <Container>
@@ -10,3 +15,4 @@ export default function WeatherToday() {
     </>
   );
 }
+export default WeatherToday;
