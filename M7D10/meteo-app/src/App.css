@@ -1,38 +1,58 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Syncopate:wght@700&display=swap");
+
+/* Index
+
+1. Navbar
+2. SearchInput
+3.
+
+*/
+
+/* ------------------------------------------ */
+/* 1. Navbar */
+
+.navbar_top img {
+  padding: 1px;
+  height: 40px;
+  background-color: white;
+  border: 2px black solid;
+  margin-right: 15px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+#gorilla {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  padding: 10px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.navbar_top .navbar-brand {
+  font-family: "Syncopate", "sans-serif";
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+/* ------------------------------------------ */
+/* 2. SearchInput */
+
+.searchbar_container .input-group {
+  margin: auto;
+  border-radius: 15px;
+  padding: 10px;
+  width: 60%;
+  background-color: rgb(209, 209, 209);
+  filter: drop-shadow(1px 1px 2px rgb(20, 20, 20));
 }
 
-.App-link {
-  color: #61dafb;
+/* --------------------------------- weather contaziner */
+.weather_container {
+  margin: auto;
+  background-color: #ffff;
+  border: solid 10px #d1d1d1;
+  padding: 10px;
+  width: 50%;
+  border-radius: 15px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.nav-item {
+  cursor: pointer;
 }
