@@ -1,24 +1,28 @@
 import React from "react";
 import { useState } from "react";
-import { WeatherSearch } from "../Types/interface";
+import { Test } from "../types/interface";
 import { Container, Card } from "react-bootstrap";
 interface WeatherSearchProps {
-  results: WeatherSearch[];
+  data: Test[];
   isLoading: boolean;
 }
 
-function WeatherToday({ results, isLoading }: WeatherSearchProps) {
+function WeatherToday({ data, isLoading }: WeatherSearchProps) {
   return (
     <>
       <Container>
         <h2>Today weather</h2>
-        {results ? (
+        {data ? (
           <Card>
             <ul>
-              <li>{results.main.temp}</li>
+              {/* <li>{data.main.temp}</li>
+              <li>{data.weather.icon}</li>
+              <li>{data.main.temp}</li> */}
             </ul>
           </Card>
-        ) : null}
+        ) : (
+          <h1>bollocks</h1>
+        )}
       </Container>
     </>
   );

@@ -2,16 +2,16 @@ import React from "react";
 import { Tab, Nav, Col, Row, Container } from "react-bootstrap";
 import Weather4DayForecast from "./Weather4DayForecast";
 import WeatherToday from "./WeatherToday";
-import { WeatherSearch } from "../Types/interface";
+import { Test } from "../types/interface";
 
 interface WeatherSearchProps {
-  weather: WeatherSearch[];
+  data: Test[];
   isLoading: boolean;
 }
 
-function Weather({ weather, isLoading }: WeatherSearchProps) {
+function Weather({ data, isLoading }: WeatherSearchProps) {
   return (
-    <div>
+    <>
       <Container className="weather_container">
         <Tab.Container id="left-tabs-example" defaultActiveKey="first">
           <Row>
@@ -28,7 +28,7 @@ function Weather({ weather, isLoading }: WeatherSearchProps) {
             <Col sm={9}>
               <Tab.Content>
                 <Tab.Pane eventKey="first">
-                  <WeatherToday weather={weather} isLoading={isLoading} />
+                  {/* <WeatherToday data={data} isLoading={isLoading} /> */}
                 </Tab.Pane>
                 <Tab.Pane eventKey="second">
                   <Weather4DayForecast />
@@ -38,7 +38,7 @@ function Weather({ weather, isLoading }: WeatherSearchProps) {
           </Row>
         </Tab.Container>
       </Container>
-    </div>
+    </>
   );
 }
 export default Weather;

@@ -1,11 +1,11 @@
-export interface WeatherSearch {
+export interface Test {
+  main: WeatherMain[];
   dt: number;
-  main: WeatherMain;
   weather: WeatherIcon[];
-  wind: WeatherWind;
+  wind: WeatherWind[];
   visibility: number;
   pop: number;
-  sys: WeatherSys;
+  sys: WeatherSys[];
   dt_txt: string;
 }
 export interface WeatherMain {
