@@ -1,45 +1,38 @@
 export interface WeatherSearch {
-  base: string;
-  clouds: {
-    all: number;
-  };
-  cod: number;
-  coord: {
-    lon: number;
-    lat: number;
-  };
   dt: number;
-  id: number;
-  main: {
-    feels_like: number;
-    grnd_level: number;
-    humidity: number;
-    pressure: number;
-    sea_level: number;
-    temp: number;
-    temp_max: number;
-    temp_min: number;
-  };
-  name: string;
-  timezone: number;
-  weather: WeatherSky[];
+  main: WeatherMain;
+  weather: WeatherIcon[];
+  wind: WeatherWind;
   visibility: number;
-  wind: {
-    speed: number;
-    def: number;
-    gust: number;
-  };
-  sys: {
-    country: string;
-    id: number;
-    sunrise: number;
-    sunset: number;
-    type: 2;
-  };
+  pop: number;
+  sys: WeatherSys;
+  dt_txt: string;
 }
-export interface WeatherSky {
-  description: "clear sky";
-  icon: "01d";
-  id: 800;
-  main: "Clear";
+export interface WeatherMain {
+  temp: number;
+  feels_like: number;
+  temp_min: number;
+  temp_max: number;
+  pressure: number;
+  sea_level: number;
+  grnd_level: number;
+  humidity: number;
+  temp_kf: number;
+}
+
+export interface WeatherSys {
+  pod: string;
+}
+
+export interface WeatherIcon {
+  id: number;
+  main: string;
+  description: string;
+  icon: string;
+}
+
+export interface WeatherWind {
+  speed: number;
+  deg: number;
+  gust: number;
 }

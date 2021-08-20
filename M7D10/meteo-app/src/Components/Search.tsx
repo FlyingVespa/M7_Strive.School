@@ -55,7 +55,11 @@ function Search() {
             Search
           </Button>
         </InputGroup>
-        <Weather weather={results} />
+        {results ? (
+          <Weather weather={results} isLoading={isLoading} />
+        ) : (
+          <Image src="logo.png"></Image>
+        )}
       </Container>
     </>
   );

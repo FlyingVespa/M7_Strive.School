@@ -28,7 +28,7 @@ function Weather({ weather, isLoading }: WeatherSearchProps) {
             <Col sm={9}>
               <Tab.Content>
                 <Tab.Pane eventKey="first">
-                  <WeatherToday weather={weather} />
+                  <WeatherToday weather={weather} isLoading={isLoading} />
                 </Tab.Pane>
                 <Tab.Pane eventKey="second">
                   <Weather4DayForecast />
