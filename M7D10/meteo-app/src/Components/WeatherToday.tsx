@@ -1,9 +1,9 @@
 import React from "react";
 import { useState } from "react";
-import { Test } from "../types/interface";
+import { WeatherDetails } from "../types/interface";
 import { Container, Card } from "react-bootstrap";
 interface WeatherSearchProps {
-  data: Test[];
+  data: WeatherDetails;
   isLoading: boolean;
 }
 
@@ -12,16 +12,11 @@ function WeatherToday({ data, isLoading }: WeatherSearchProps) {
     <>
       <Container>
         <h2>Today weather</h2>
-        {data ? (
+
+        {data && (
           <Card>
-            <ul>
-              {/* <li>{data.main.temp}</li>
-              <li>{data.weather.icon}</li>
-              <li>{data.main.temp}</li> */}
-            </ul>
+            <span>{data.main.temp}</span>;<span>{data.main.temp_min}</span>;
           </Card>
-        ) : (
-          <h1>bollocks</h1>
         )}
       </Container>
     </>

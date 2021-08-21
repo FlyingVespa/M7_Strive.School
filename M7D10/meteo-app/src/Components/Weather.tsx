@@ -2,10 +2,10 @@ import React from "react";
 import { Tab, Nav, Col, Row, Container } from "react-bootstrap";
 import Weather4DayForecast from "./Weather4DayForecast";
 import WeatherToday from "./WeatherToday";
-import { Test } from "../types/interface";
+import { WeatherDetails } from "../types/interface";
 
 interface WeatherSearchProps {
-  data: Test[];
+  data: WeatherDetails;
   isLoading: boolean;
 }
 
@@ -28,7 +28,7 @@ function Weather({ data, isLoading }: WeatherSearchProps) {
             <Col sm={9}>
               <Tab.Content>
                 <Tab.Pane eventKey="first">
-                  {/* <WeatherToday data={data} isLoading={isLoading} /> */}
+                  <WeatherToday data={data} isLoading={isLoading} />
                 </Tab.Pane>
                 <Tab.Pane eventKey="second">
                   <Weather4DayForecast />

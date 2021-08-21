@@ -7,13 +7,13 @@ import {
   Button,
   Image,
 } from "react-bootstrap";
-import { Test } from "../types/interface";
+import { WeatherDetails } from "../types/interface";
 import Weather from "./Weather";
 
 function Search() {
   const [query, setQuery] = useState<string>("");
   const [isLoading, setIsLoading] = useState<boolean>(false);
-  const [results, setResults] = useState<Test[] | null>(null);
+  const [results, setResults] = useState<WeatherDetails | null>(null);
   const [placeholder, setPlaceholder] = useState<string>(
     "Search for weather updates by city"
   );

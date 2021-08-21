@@ -1,6 +1,6 @@
 import React from "react";
 import { Container, Card, Image } from "react-bootstrap";
-import { Test } from "../types/interface";
+import { WeatherDetails } from "../types/interface";
 
 export default function Weather4DayForecast() {
   return (
