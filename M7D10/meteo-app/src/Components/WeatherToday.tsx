@@ -12,6 +12,7 @@ function WeatherToday({ data, isLoading }: WeatherSearchProps) {
   const z: number = 10;
   const x: number = data && Math.abs(Math.round(data.coord.lon * z));
   const y: number = data && Math.abs(Math.round(data.coord.lat * z));
+
   return (
     <>
       <Container>
@@ -33,9 +34,6 @@ function WeatherToday({ data, isLoading }: WeatherSearchProps) {
                 <p id="main_temp">{data.main.temp}</p>
                 <p>{data.main.humidity}</p>
                 <p>{data.weather[0].description.toUpperCase()}</p>;
-                <Image
-                  src={`https://tile.openweathermap.org/map/${layer}/${z}/${x}/${y}.png?appid=${process.env.REACT_APP_WEATHER_API}`}
-                />
               </Col>
             </Row>
           </Container>

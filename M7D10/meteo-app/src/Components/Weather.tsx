@@ -6,11 +6,12 @@ import WeatherToday from "./WeatherToday";
 import { WeatherDetails } from "../types/interface";
 
 interface WeatherSearchProps {
+  fiveday: WeatherDetails[];
   data: WeatherDetails;
   isLoading: boolean;
 }
 
-function Weather({ data, isLoading }: WeatherSearchProps) {
+function Weather({ data, forecast, isLoading }: WeatherSearchProps) {
   return (
     <>
       <Container className="weather_container">
@@ -32,7 +33,7 @@ function Weather({ data, isLoading }: WeatherSearchProps) {
                   <WeatherToday data={data} isLoading={isLoading} />
                 </Tab.Pane>
                 <Tab.Pane eventKey="second">
-                  <Weather4DayForecast />
+                  <Weather4DayForecast forecast={forecast} />
                 </Tab.Pane>
               </Tab.Content>
             </Col>
