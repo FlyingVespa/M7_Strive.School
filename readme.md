@@ -53,7 +53,6 @@ https://remotive.io/api/remote-jobs?company_name=olla
 **EXTRA**:
 
 - implement also a filter by category; valid categories can be retrieved performing a GET request on this endpoint: https://remotive.io/api/remote-jobs/categories
-
 </details>
 
 #### Day 2
@@ -242,6 +241,8 @@ Be able to present a brief overview on three of these TypeScript related topics 
 
 [TS Tut](https://youtu.be/wyO8RWl1ges)
 
+</details>
+
 #### Day 8
 
 <details><summary>🔗 - Useful Resources</summary>
@@ -323,8 +324,7 @@ Implement typings and interfaces the best you can and make the project run again
 <details><summary>🥇 - Homework - WeatherApp TS</summary>
 Should I carry the Umbrella with me?
  
-You are in charge of building a new App for checking the weather around the world!
-
+_You are in charge of building a new App for checking the weather around the world!_
 _Use ReactJS and OPTIONALLY any new skill learned in this module :_
 
 - Redux
