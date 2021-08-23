@@ -18,6 +18,7 @@ import {
 import { WeatherDetails } from "../types/interface";
 import Weather from "./Weather";
 import countries from "../json/countries.json";
+import { Forecast } from "../types/interfaceForecast";
 
 function Search() {
   const [units, setUnits] = useState<string>("metric");
@@ -29,7 +30,7 @@ function Search() {
   const [radioValue, setRadioValue] = useState<string>("metric");
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [results, setResults] = useState<WeatherDetails | null>(null);
-  const [forecast, setForecast] = useState<WeatherDetails | null>(null);
+  const [forecast, setForecast] = useState<Forecast[] | null>(null);
   const [placeholder, setPlaceholder] = useState<string>(
     "Search for weather updates by city"
   );
@@ -52,7 +53,7 @@ function Search() {
     setCountry(e.target.value);
   };
   const handleClick = () => {
-    // getCurrentWeather(city);
+    getCurrentWeather(city);
     getFiveDayForecast(city);
     setPlaceholder("Try another location...");
     console.log(placeholder);
@@ -129,8 +130,8 @@ function Search() {
           </InputGroup>
         </Row>
 
-        {results ? (
-          <Weather data={results} isLoading={isLoading} fiveday={forecast} />
+        {results && forecast ? (
+          <Weather data={results} isLoading={isLoading} forecast={forecast} />
         ) : (
           <Image src="logo.png" id="main_logo" />
         )}
