@@ -7,34 +7,30 @@ import {
   Row,
 } from "react-bootstrap";
 import { useEffect, useState } from "react";
+import { fetchData } from "../Utils/utils";
+import axios from "axios";
 
 const SearchBar = () => {
-  const [query, setQuery] = useState("");
-  const [jobs, setJobs] = useState({});
+  const [query, setQuery] = useState("web");
+  const [jobs, setJobs] = useState([]);
   const [hasError, setErrors] = useState(false);
   const [loading, setLoading] = useState(false);
+
+  const endpoint = process.env.API_URL;
 
   const handleChange = (event) => {
     setQuery(event.target.value);
   };
-  const handleSubmit = (e) => {
-    e.preventDefault();
+
+  const fetchData = () => {
+    fetch("https://remotive.io/api/remote-jobs?search=" + query)
+      .then((response) => response.text())
+      .then((result) => console.log(result))
+      .catch((error) => console.log("error", error));
   };
-
-  const endpoint = process.env.API_URL;
-
-  const fetchData = async () => {
-    const resp = await fetch(endpoint + query);
-    resp
-      .json()
-      .then((resp) => setJobs(resp))
-      .then(console.log(jobs))
-      .catch((err) => setErrors(err));
-  };
-
   useEffect(() => {
     fetchData();
-  }, [query]);
+  }, []);
 
   return (
     <>
@@ -48,7 +44,7 @@ const SearchBar = () => {
             />
             <Button
               type="submit"
-              onClick={handleSubmit && console.log("click")}
+              onClick={console.log("click")}
               variant="secondary"
               id="search-btn"
             >

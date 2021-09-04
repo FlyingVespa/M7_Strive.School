@@ -3,7 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import { BrowserRouter, Route } from "react-router-dom";
 import SearchBar from "./Components/SearchBar";
-import { Footer } from "./Components/Footer";
+import Footer from "./Components/Footer";
 import JobList from "./Components/JobList";
 
 function App() {
