@@ -24,7 +24,7 @@ _Basic Recap of ReactJS from previous modules (refresher after back-end)_
 </details>
 
 <details>
-<summary>🥇 - Homework - "Search Engine"</summary>
+<summary>🥇 - Homework - "Search Engine" - NOT ABLE TO COMPLETE _ API FAULTY</summary>
 
 **Create a "Search Engine" for Remote Jobs.**
 
@@ -87,7 +87,7 @@ _Redux - Strivezon with Redux_
 - [Does it mutate?](https://doesitmutate.xyz/)
 </details>
 
-<details><summary>🥇 - Homework - Continue "Search Engine" </summary>
+<details><summary>🥇 - Homework - Continue "Search Engine" - NOT ABLE TO COMPLETE _ API FAULTY </summary>
 _You are in charge of building a "Search Engine" for Job Posting.
 The application should have a search page where the user can input the desired position and retrieve
 relevant results._
@@ -118,7 +118,7 @@ _Redux - Advance Redux reducers_
 - [Combiner Reducers](https://redux.js.org/api/combinereducers)
 </details>
 
-<details><summary>🥇 - Homework - Continue "Search Engine" </summary>
+<details><summary>🥇 - Homework - Continue "Search Engine" - NOT ABLE TO COMPLETE _ API FAULTY </summary>
 Continue with M7D3  "Search Engine" 
     It's time to split our single reducer into multiple ones and introduce redux-thunk in our app for performing asynchronous action dispatching.
     Create two separate reducers: one will continue to store our favourites, and the other will be dedicated to host the array coming from the jobs search results.
