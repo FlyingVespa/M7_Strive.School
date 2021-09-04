@@ -194,7 +194,7 @@ Redux Extra
 
 </details>
 
-<details><summary>🥇 - Homework - Continue "Search Engine" </summary>
+<details><summary>🥇 - Homework - Continue "Search Engine" - NOT ABLE TO COMPLETE _ API FAULTY</summary>
 
 _You are in charge of building a "Search Engine" for Job Posting.
 The application should have a search page where the user can set the position (or tech) and the location._
